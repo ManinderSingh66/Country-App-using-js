@@ -9,7 +9,7 @@ let topLevel = document.querySelector('.toplvl');
 let currency = document.querySelector('.currency');
 let language = document.querySelector('.language');
 let btnDiv = document.querySelector('.btnstyle');
-let backButton = document.querySelector('.backBtn button')
+let backButton = document.querySelector('.backBtn button');
 const countryName = new URLSearchParams(window.location.search).get('name');
 
 backButton.addEventListener('click', (() => {
@@ -21,7 +21,7 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fulltext=true`)
     .then((data) => {
         data.forEach(val => {
             
-            console.log(val.borders)
+            console.log(val.borders);
 
             img.src = val.flags.svg ? `${val.flags.svg}` : "N/A"
 

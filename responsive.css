@@ -20,7 +20,7 @@
   }
   .navAlign{
       margin: 0 4rem;
-      /* border:1px solid;   */
+
   }
   .mainAlign{
      margin: 0 4rem;
@@ -28,12 +28,15 @@
 .title {
     font-size: 13px;
   }
+  .searchFilter{
+     margin: 0rem 4rem;
+  }
 
   .countries{
     padding: 2rem 0rem;
   }
   .backBtn{
-      margin: 2rem 4rem;
+      margin: 0rem 4rem;
 
   }
 }
@@ -134,6 +137,13 @@
   .wrap {
    width:80%;
   }
+   .filter {
+    margin-top: 22px;
+   }
+   .searchFilter{
+     padding: 2rem 1rem;
+   }
+
 }
 @media (max-width: 480px) {
    .title h2{
@@ -156,6 +166,10 @@
       margin: 2rem 2rem;
       padding-inline:0 ;
   }
+   .searchFilter{
+     /* padding: 2rem 10px; */
+     margin: 0 1rem;
+   }
   .mainAlign{
      margin: 0 2rem;
   }
