@@ -10,10 +10,16 @@ let currency = document.querySelector('.currency');
 let language = document.querySelector('.language');
 let btnDiv = document.querySelector('.btnstyle');
 let backButton = document.querySelector('.backBtn button');
+// const themeButton = document.querySelector('.darkmode');
 const countryName = new URLSearchParams(window.location.search).get('name');
+const home = document.getElementById('home')
 
-backButton.addEventListener('click', (() => {
+
+home.addEventListener('click',(()=>{
     window.location.href = "index.html";
+}))
+backButton.addEventListener('click', (() => {
+         history.back();
 }))
 
 fetch(`https://restcountries.com/v3.1/name/${countryName}?fulltext=true`)
@@ -21,7 +27,7 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fulltext=true`)
     .then((data) => {
         data.forEach(val => {
             
-            console.log(val.borders);
+            // console.log(val.borders);
 
             img.src = val.flags.svg ? `${val.flags.svg}` : "N/A"
 
@@ -47,11 +53,16 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fulltext=true`)
                 ? Object.values(val.languages).slice(0, 3).join(",")
                 : language.innerText = "Language N/A";
 
-            val.borders? val.borders.forEach((el,index)=>{
-                let a = document.createElement('a')
-                a.innerText = el
-                console.log(index,el)
-                btnDiv.append(a);
+            val.borders? val.borders.forEach((border)=>{
+                fetch(`https://restcountries.com/v3.1/alpha/${border}`).
+                then((res)=>res.json()).
+                then((data)=>{ 
+                        data.forEach((country)=>{
+                        let a = document.createElement('a')
+                        a.innerText = country.name.common;
+                        a.href = `country.html?name=${country.name.common}`
+                        btnDiv.append(a);
+            })})        
             }): btnDiv.innerHTML = `<p>Borders N/A</p>`;
 
 

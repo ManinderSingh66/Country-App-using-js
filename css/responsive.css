@@ -39,6 +39,11 @@
       margin: 0rem 4rem;
 
   }
+  .borders a{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+  }
 }
 
 @media (max-width: 1060px) {
@@ -106,13 +111,26 @@
    display: block;
   }
   .btnstyle{
-    margin-top: 12px;
+    /* margin-top: 12px; */
     justify-content: flex-start;
   }
   .borders{
     flex-wrap: wrap;
     gap:10px;
   }
+  .searchFilter {
+     align-items: center;
+vertical-align: middle;     
+  }
+  .input{
+     min-width:55vw;
+  }
+
+}
+@media(max-width:663px){
+   .filter{
+     margin-top: 18px;
+   }
 }
 @media(max-width:571px){
   .title h2{
@@ -147,14 +165,14 @@
 }
 @media (max-width: 480px) {
    .title h2{
-        font-size:14px;
+        font-size:16px;
       }
       .dark p{
-       font-size:11px;
+       font-size:13px;
      }
   .parent{
     align-items: flex-start;
-    margin: 2rem 0rem;
+    margin: 0rem 0rem;
   }
 
    .navAlign{
@@ -210,5 +228,8 @@
       display: flex;
       flex-wrap: wrap;
       gap:15px;
+  }
+  .borders{
+    /* display: block; */
   }
 }

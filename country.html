@@ -4,10 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Country Details</title>
-    <link rel="stylesheet" href="country.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="country.css" />
-    <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="./css/country.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,18 +22,19 @@
     />
   </head>
   <body>
-   <nav>
+  <nav>
        <div class="navAlign">
          <div class="title">
-        <h2>Where in the world ?</h2>
+        <h2 id="home">Where in the world ?</h2>
       </div>
 
       <div class="dark">
-        <p class="darkmode"><i class="fa-regular fa-moon moon"></i>Dark mode</p>
-      </div>
+                <p class="darkmode"><i class="fa-regular fa-moon moon"></i>Dark mode</p>
+         </div>
        </div>
     </nav>
 
+<div class="theme">
       <div class="backBtn">
         <button><i class="fa-solid fa-arrow-left-long"></i>Back</button>
       </div>
@@ -69,7 +69,9 @@
         </div>
       </div>
     </div>
+</div>
+    <script src="./js/theme.js"></script>
+    <script src="./js/country.js" defer></script>
 
-    <script src="/country.js" defer></script>
   </body>
 </html>
