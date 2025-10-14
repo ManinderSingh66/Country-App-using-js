@@ -14,7 +14,6 @@ let backButton = document.querySelector('.backBtn button');
 const countryName = new URLSearchParams(window.location.search).get('name');
 const home = document.getElementById('home')
 
-
 home.addEventListener('click',(()=>{
     window.location.href = "index.html";
 }))
