@@ -27,7 +27,6 @@ inputField.addEventListener('input',(el)=>{
  });
 
 function renderCards(data){
-     //   console.log(data);
            countries.innerHTML = ""
 
        data.forEach((val)=>{

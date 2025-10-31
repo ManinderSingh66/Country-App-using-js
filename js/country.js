@@ -10,7 +10,6 @@ let currency = document.querySelector('.currency');
 let language = document.querySelector('.language');
 let btnDiv = document.querySelector('.btnstyle');
 let backButton = document.querySelector('.backBtn button');
-// const themeButton = document.querySelector('.darkmode');
 const countryName = new URLSearchParams(window.location.search).get('name');
 const home = document.getElementById('home')
 
@@ -25,8 +24,7 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fulltext=true`)
     .then((res) => res.json())
     .then((data) => {
         data.forEach(val => {
-            
-            // console.log(val.borders);
+    
 
             img.src = val.flags.svg ? `${val.flags.svg}` : "N/A"
 
@@ -52,7 +50,9 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fulltext=true`)
                 ? Object.values(val.languages).slice(0, 3).join(",")
                 : language.innerText = "Language N/A";
 
-            val.borders? val.borders.forEach((border)=>{
+            btnDiv.innerHTML = '';
+            val.borders && val.borders.length > 0 ? 
+               val.borders.forEach((border)=>{
                 fetch(`https://restcountries.com/v3.1/alpha/${border}`).
                 then((res)=>res.json()).
                 then((data)=>{ 
@@ -61,10 +61,10 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fulltext=true`)
                         a.innerText = country.name.common;
                         a.href = `country.html?name=${country.name.common}`
                         btnDiv.append(a);
-            })})        
-            }): btnDiv.innerHTML = `<p>Borders N/A</p>`;
-
-
+                 });
+              });        
+            })
+        : btnDiv.innerHTML = `<b>Borders N/A</b>`;
         });
     })
 

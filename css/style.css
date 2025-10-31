@@ -46,7 +46,6 @@ nav {
 .dark {
   display: flex;
   align-items: center;
-  /* border:1px solid red; */
   justify-content: center;
 }
 .darkmode {
